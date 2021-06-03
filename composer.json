@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "codememory/environment": "^1.0"
+        "codememory/environment": "^1.0.2"
     },
     "autoload": {
         "psr-4": {
