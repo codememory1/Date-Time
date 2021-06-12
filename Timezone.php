@@ -15,6 +15,8 @@ use Codememory\Components\DateTime\Exceptions\InvalidTimezoneException;
 class Timezone
 {
 
+    private const DEFAULT_TIMEZONE = 'GMT';
+
     /**
      * @var string|null
      */
@@ -50,7 +52,7 @@ class Timezone
     public function getTimezone(): DateTimeZone|Timezone
     {
 
-        $timezone = $this->timezone ?? env('app.timezone');
+        $timezone = $this->timezone ?? env('app.timezone') ?: self::DEFAULT_TIMEZONE;
 
         try {
             return new DateTimeZone($timezone);
